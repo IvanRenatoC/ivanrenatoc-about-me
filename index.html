@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Iván Renato · Data Scientist & Analytics Leader</title>
+  <title>Iván Renato Canales C. · Data Scientist & Analytics Leader</title>
   <meta name="description" content="Data Scientist y Analytics Leader con más de una década convirtiendo datos en decisiones de negocio con impacto real.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -372,6 +372,104 @@
     }
     .footer-copy { font-size: 0.78rem; opacity: 0.4; margin-top: 2rem; }
 
+    /* ─── TRAYECTORIA ─── */
+    #trayectoria {
+      padding: 110px 6%;
+      background: var(--surface);
+    }
+    .trayectoria-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .timeline { position: relative; padding-left: 1.5rem; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 6px;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--accent), var(--accent-light));
+      border-radius: 2px;
+    }
+    .timeline-item {
+      position: relative;
+      padding-bottom: 2.5rem;
+    }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .timeline-dot {
+      position: absolute;
+      left: -1.97rem;
+      top: 5px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 2px solid white;
+      box-shadow: 0 0 0 2px var(--accent);
+    }
+    .timeline-dot.current { background: var(--gold); box-shadow: 0 0 0 2px var(--gold); }
+    .timeline-meta {
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.2rem;
+    }
+    .timeline-company {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--primary);
+    }
+    .timeline-date {
+      font-size: 0.75rem;
+      color: var(--muted);
+      font-weight: 500;
+      background: var(--bg);
+      padding: 0.1rem 0.5rem;
+      border-radius: 100px;
+    }
+    .timeline-role {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .timeline-desc {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .edu-card {
+      background: var(--bg);
+      border-radius: 14px;
+      padding: 1.4rem;
+      margin-bottom: 1rem;
+      border: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .edu-card:hover { border-color: var(--accent-light); }
+    .edu-card h4 {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.25rem;
+    }
+    .edu-card p {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    .edu-section-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
     /* ─── RESPONSIVE ─── */
     @media (max-width: 900px) {
       .hero-inner { grid-template-columns: 1fr; text-align: center; gap: 3rem; }
@@ -382,6 +480,7 @@
       .hero-cta { justify-content: center; }
       .title-line { margin-inline: auto; }
       .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .trayectoria-grid { grid-template-columns: 1fr; gap: 3rem; }
       .nav-links { display: none; }
       .projects-grid { grid-template-columns: 1fr; }
     }
@@ -391,9 +490,10 @@
 
 <!-- ──────────────── NAVBAR ──────────────── -->
 <nav>
-  <a href="#hero" class="nav-logo">Iván Renato</a>
+  <a href="#hero" class="nav-logo">Iván Renato C.</a>
   <ul class="nav-links">
     <li><a href="#about">Sobre mí</a></li>
+    <li><a href="#trayectoria">Trayectoria</a></li>
     <li><a href="#projects">Proyectos</a></li>
     <li><a href="https://github.com/IvanRenatoC" target="_blank" rel="noopener">GitHub ↗</a></li>
   </ul>
@@ -404,7 +504,7 @@
   <div class="hero-inner">
     <div class="hero-text">
       <span class="hero-label">Data Scientist · Analytics Leader</span>
-      <h1>Iván<br>Renato</h1>
+      <h1>Iván Renato<br>Canales C.</h1>
       <div class="title-line"></div>
       <p class="hero-tagline">Convirtiendo datos en decisiones de negocio con impacto real.</p>
       <p class="hero-sub">
@@ -412,12 +512,13 @@
         de Data Science, Machine Learning e Inteligencia Artificial para banca, retail y sector público.
       </p>
       <div class="hero-cta">
-        <a href="#projects" class="btn-primary">Ver Proyectos →</a>
+        <a href="#trayectoria" class="btn-primary">Trayectoria →</a>
+        <a href="#projects" class="btn-secondary">Ver Proyectos →</a>
         <a href="https://github.com/IvanRenatoC" target="_blank" rel="noopener" class="btn-secondary">GitHub ↗</a>
       </div>
     </div>
     <div class="hero-photo-wrap">
-      <img src="assets/imagen-ivan-usar.png" alt="Iván Renato" class="hero-img">
+      <img src="assets/imagen-ivan-usar.png" alt="Iván Renato Canales C." class="hero-img">
     </div>
   </div>
 </section>
@@ -484,6 +585,166 @@
             <span class="skill-tag">Metodologías ágiles</span>
             <span class="skill-tag">Política pública</span>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ──────────────── TRAYECTORIA ──────────────── -->
+<section id="trayectoria">
+  <div class="section-inner">
+    <p class="section-tag">Experiencia Profesional</p>
+    <h2 class="section-title">Trayectoria</h2>
+
+    <div class="trayectoria-grid">
+      <!-- Timeline -->
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot current"></div>
+          <div class="timeline-meta">
+            <span class="timeline-company">Caja Los Andes</span>
+            <span class="timeline-date">Mar. 2023 · A la fecha</span>
+          </div>
+          <p class="timeline-role">Subgerente Chapter Advance Analytics</p>
+          <p class="timeline-desc">
+            Co-lidero la Gerencia Corporativa de Datos, definiendo alcance, productos y enfoque en analítica.
+            Responsable de garantizar la continuidad operativa en la identificación de oportunidades y gestión
+            de modelos de Machine Learning e IA. Lideré la implementación de proyectos de GenIA para desarrollar
+            soluciones de negocio, incluyendo deep learning para reconocimiento y comparación de imágenes en
+            tiempo real. Diseño la estrategia de ML Governance e integración de prácticas MLOps CI/CD.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-meta">
+            <span class="timeline-company">Caja Los Andes</span>
+            <span class="timeline-date">Nov. 2019 · Feb. 2023</span>
+          </div>
+          <p class="timeline-role">Líder de Data Science y Estudios</p>
+          <p class="timeline-desc">
+            Diseñé y conformé el equipo de Data Scientists de la compañía. Incorporé metodologías
+            cuantitativas e instrumentos de medición para corroborar hipótesis y afinar análisis avanzados.
+            Crecimiento del staff analítico de 2 a 12 personas en 3 años y medio. Logros destacados:
+            reconocimiento de firmas (de 6 min a 4 seg), automatización del 100% de encuestas de
+            satisfacción y sistema de recomendación que personaliza la sesión privada de cada cliente.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-meta">
+            <span class="timeline-company">Banco Itaú</span>
+            <span class="timeline-date">Jul. 2017 · Nov. 2019</span>
+          </div>
+          <p class="timeline-role">Analista Senior</p>
+          <p class="timeline-desc">
+            Asigné ofertas de crédito aprobadas del segmento minorista vía machine learning, participando
+            en las definiciones comerciales. Rediseñé la lógica de asignación para la cartera aprobada
+            de la banca minorista y mantuve la oferta crediticia disponible los 365 días del año,
+            tanto en web como en la app.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-meta">
+            <span class="timeline-company">CORFO</span>
+            <span class="timeline-date">Sep. 2014 · Jun. 2017</span>
+          </div>
+          <p class="timeline-role">Ejecutivo de Riesgo</p>
+          <p class="timeline-desc">
+            Evalué el riesgo de crédito y proyección para los fondos de renta variable de la corporación
+            con machine learning. Estimé y justifiqué el fondo propuesto a la comisión mixta del Congreso
+            Nacional para la futura ley de Inclusión Escolar. Implementé algoritmos ML en la estimación
+            de gastos por provisiones del Fondo Fogain.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-meta">
+            <span class="timeline-company">SMU</span>
+            <span class="timeline-date">Nov. 2012 · Sep. 2014</span>
+          </div>
+          <p class="timeline-role">Analista de Proyectos</p>
+          <p class="timeline-desc">
+            Generé modelos de machine learning para la demanda en diferentes productos dentro del
+            proyecto de optimización de precios. Entregué evaluaciones de las diferentes
+            promociones de la empresa.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-meta">
+            <span class="timeline-company">Banco Santander</span>
+            <span class="timeline-date">Ene. 2012 · Oct. 2012</span>
+          </div>
+          <p class="timeline-role">Analista Estadístico Senior</p>
+          <p class="timeline-desc">
+            Creé, analicé, monitoreé y ajusté modelos estadísticos enfocados en CRM y BI.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-meta">
+            <span class="timeline-company">Formulisa SPA</span>
+            <span class="timeline-date">Jun. 2010 · Dic. 2011</span>
+          </div>
+          <p class="timeline-role">Data Miner</p>
+          <p class="timeline-desc">
+            Participé en proyectos de modelado tanto predictivo como de clasificación,
+            utilizando metodología de trabajo CRISP-DM.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-meta">
+            <span class="timeline-company">MINEDUC</span>
+            <span class="timeline-date">Dic. 2009 · May. 2010</span>
+          </div>
+          <p class="timeline-role">Analista Estadístico</p>
+          <p class="timeline-desc">
+            Evalué encuestas a padres, tutores, docentes y estudiantes de las pruebas SIMCE 2009
+            para explicar el rendimiento académico.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Educación y habilidades -->
+      <div>
+        <p class="edu-section-title">Educación</p>
+        <div class="edu-card">
+          <h4>Ingeniería Estadística</h4>
+          <p>Universidad de Santiago de Chile · 2010</p>
+        </div>
+        <div class="edu-card">
+          <h4>Diplomado en Conocimiento del Consumidor</h4>
+          <p>Universidad de Chile · 2010</p>
+        </div>
+
+        <p class="edu-section-title" style="margin-top:2rem">Dominio Técnico</p>
+        <div class="edu-card">
+          <h4>Lenguajes & Plataformas</h4>
+          <p>Python · Spark · SQL · GCP · Azure</p>
+        </div>
+        <div class="edu-card">
+          <h4>IA & Modelos</h4>
+          <p>GPT 4.0 Mini y 5 · Gemini 2.5 Pro · Keras · TensorFlow · OpenCV · Polars</p>
+        </div>
+        <div class="edu-card">
+          <h4>Idiomas</h4>
+          <p>Español (nativo) · Inglés (intermedio)</p>
+        </div>
+        <div class="edu-card">
+          <h4>Disponibilidad</h4>
+          <p>Híbrido-remoto · Viña del Mar, Valparaíso</p>
         </div>
       </div>
     </div>
@@ -651,11 +912,14 @@
       <a href="https://github.com/IvanRenatoC" target="_blank" rel="noopener" class="footer-link">
         GitHub ↗
       </a>
+      <a href="https://www.linkedin.com/in/ivanrenatoc/" target="_blank" rel="noopener" class="footer-link">
+        LinkedIn ↗
+      </a>
       <a href="mailto:ivanrenatoc.analytics.lab@gmail.com" class="footer-link">
         ✉ Email
       </a>
     </div>
-    <p class="footer-copy">© 2025 Iván Renato · Hecho con datos y buen gusto.</p>
+    <p class="footer-copy">© 2025 Iván Renato Canales C. · Hecho con datos y buen gusto.</p>
   </div>
 </footer>
 
