@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iván Renato · Data Scientist & Analytics Leader</title>
+  <meta name="description" content="Data Scientist y Analytics Leader con más de una década convirtiendo datos en decisiones de negocio con impacto real.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:           #eef3fb;
+      --surface:      #ffffff;
+      --primary:      #0f2342;
+      --accent:       #2563eb;
+      --accent-light: #dbeafe;
+      --gold:         #f59e0b;
+      --text:         #374151;
+      --muted:        #6b7280;
+      --border:       #e5e7eb;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ─── NAVBAR ─── */
+    nav {
+      position: fixed;
+      inset-block-start: 0;
+      inset-inline: 0;
+      z-index: 100;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 6%;
+      background: rgba(238, 243, 251, 0.9);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+    }
+    .nav-logo {
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--primary);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+    .nav-links { display: flex; gap: 2.25rem; list-style: none; }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--primary); }
+
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 80px 6% 60px;
+    }
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .hero-label {
+      display: inline-block;
+      background: var(--accent-light);
+      color: var(--accent);
+      padding: 0.35rem 1rem;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    .hero-text h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(3.2rem, 5.5vw, 5rem);
+      color: var(--primary);
+      line-height: 1.0;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.4rem;
+    }
+    .title-line {
+      width: 56px;
+      height: 4px;
+      background: var(--gold);
+      border-radius: 2px;
+      margin: 1.5rem 0;
+    }
+    .hero-tagline {
+      font-size: 1.1rem;
+      color: var(--text);
+      font-weight: 400;
+      margin-bottom: 0.85rem;
+      line-height: 1.75;
+    }
+    .hero-sub {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-bottom: 2.5rem;
+      line-height: 1.8;
+    }
+    .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--accent);
+      color: white;
+      padding: 0.78rem 1.8rem;
+      border-radius: 100px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.88rem;
+      transition: all 0.2s;
+      box-shadow: 0 4px 18px rgba(37, 99, 235, 0.28);
+    }
+    .btn-primary:hover {
+      background: #1d4ed8;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(37, 99, 235, 0.38);
+    }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: transparent;
+      color: var(--primary);
+      padding: 0.78rem 1.8rem;
+      border-radius: 100px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.88rem;
+      border: 1.5px solid var(--border);
+      transition: all 0.2s;
+    }
+    .btn-secondary:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    /* Hero image */
+    .hero-photo-wrap {
+      display: flex;
+      justify-content: center;
+      position: relative;
+    }
+    .hero-photo-wrap::before {
+      content: '';
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .hero-photo-wrap::after {
+      content: '';
+      position: absolute;
+      width: 340px;
+      height: 340px;
+      border-radius: 50%;
+      border: 2px dashed rgba(37, 99, 235, 0.18);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: spin 30s linear infinite;
+    }
+    @keyframes spin { to { transform: translate(-50%, -50%) rotate(360deg); } }
+
+    .hero-img {
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center 20%;
+      position: relative;
+      z-index: 1;
+      border: 6px solid white;
+      box-shadow: 0 24px 64px rgba(15, 35, 66, 0.14);
+    }
+
+    /* ─── ABOUT ─── */
+    #about {
+      padding: 110px 6%;
+      background: var(--surface);
+    }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      color: var(--primary);
+      margin-bottom: 2.5rem;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .about-text p {
+      margin-bottom: 1.3rem;
+      font-size: 1rem;
+      line-height: 1.85;
+      color: var(--text);
+    }
+    .skills-col { display: flex; flex-direction: column; gap: 1rem; }
+    .skill-card {
+      background: var(--bg);
+      border-radius: 14px;
+      padding: 1.2rem 1.4rem;
+      border: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .skill-card:hover { border-color: var(--accent-light); }
+    .skill-card h4 {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: 0.65rem;
+    }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .skill-tag {
+      background: white;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 0.22rem 0.65rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
+    /* ─── PROJECTS ─── */
+    #projects {
+      padding: 110px 6%;
+      background: var(--bg);
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 1.4rem;
+      margin-top: 3rem;
+    }
+    .project-card {
+      background: var(--surface);
+      border-radius: 18px;
+      padding: 2rem;
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(15, 35, 66, 0.09);
+      border-color: transparent;
+    }
+    .project-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.55rem;
+      margin-bottom: 1.3rem;
+      flex-shrink: 0;
+    }
+    .project-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.7rem;
+      line-height: 1.35;
+    }
+    .project-card p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.75;
+      flex: 1;
+      margin-bottom: 1.3rem;
+    }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .project-tag {
+      padding: 0.25rem 0.7rem;
+      border-radius: 100px;
+      font-size: 0.7rem;
+      font-weight: 600;
+    }
+    .tag-blue   { background: #dbeafe; color: #1d4ed8; }
+    .tag-green  { background: #dcfce7; color: #15803d; }
+    .tag-orange { background: #ffedd5; color: #c2410c; }
+    .tag-purple { background: #ede9fe; color: #7c3aed; }
+    .tag-pink   { background: #fce7f3; color: #be185d; }
+    .tag-teal   { background: #ccfbf1; color: #0f766e; }
+    .tag-yellow { background: #fef9c3; color: #a16207; }
+    .tag-gray   { background: #f3f4f6; color: #374151; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--primary);
+      color: rgba(255,255,255,0.65);
+      padding: 80px 6% 50px;
+      text-align: center;
+    }
+    .footer-inner { max-width: 600px; margin: 0 auto; }
+    footer h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.4rem;
+      color: white;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+    footer p { font-size: 0.95rem; line-height: 1.75; margin-bottom: 2.5rem; }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+    .footer-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.88rem;
+      padding: 0.7rem 1.6rem;
+      border: 1.5px solid rgba(255,255,255,0.25);
+      border-radius: 100px;
+      transition: all 0.2s;
+    }
+    .footer-link:hover {
+      border-color: white;
+      background: rgba(255,255,255,0.1);
+    }
+    .footer-copy { font-size: 0.78rem; opacity: 0.4; margin-top: 2rem; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; text-align: center; gap: 3rem; }
+      .hero-photo-wrap { order: -1; }
+      .hero-img { width: 260px; height: 260px; }
+      .hero-photo-wrap::before { width: 300px; height: 300px; }
+      .hero-photo-wrap::after { width: 240px; height: 240px; }
+      .hero-cta { justify-content: center; }
+      .title-line { margin-inline: auto; }
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .nav-links { display: none; }
+      .projects-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ──────────────── NAVBAR ──────────────── -->
+<nav>
+  <a href="#hero" class="nav-logo">Iván Renato</a>
+  <ul class="nav-links">
+    <li><a href="#about">Sobre mí</a></li>
+    <li><a href="#projects">Proyectos</a></li>
+    <li><a href="https://github.com/IvanRenatoC" target="_blank" rel="noopener">GitHub ↗</a></li>
+  </ul>
+</nav>
+
+<!-- ──────────────── HERO ──────────────── -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <span class="hero-label">Data Scientist · Analytics Leader</span>
+      <h1>Iván<br>Renato</h1>
+      <div class="title-line"></div>
+      <p class="hero-tagline">Convirtiendo datos en decisiones de negocio con impacto real.</p>
+      <p class="hero-sub">
+        Más de una década liderando equipos multidisciplinarios y desarrollando soluciones
+        de Data Science, Machine Learning e Inteligencia Artificial para banca, retail y sector público.
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn-primary">Ver Proyectos →</a>
+        <a href="https://github.com/IvanRenatoC" target="_blank" rel="noopener" class="btn-secondary">GitHub ↗</a>
+      </div>
+    </div>
+    <div class="hero-photo-wrap">
+      <img src="assets/imagen-ivan-usar.png" alt="Iván Renato" class="hero-img">
+    </div>
+  </div>
+</section>
+
+<!-- ──────────────── ABOUT ──────────────── -->
+<section id="about">
+  <div class="section-inner">
+    <p class="section-tag">Sobre mí</p>
+    <h2 class="section-title">Datos, Liderazgo<br>& Soluciones</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          Soy un profesional especializado en el mundo de los datos y el análisis cuantitativo
+          y cualitativo, con una trayectoria sólida como líder de equipos multidisciplinarios
+          enfocados en resolver problemas complejos de negocio a través de metodologías de
+          Data Science y Machine Learning.
+        </p>
+        <p>
+          Mi experiencia abarca el diseño e implementación de algoritmos de alta complejidad
+          en sectores como la banca, el retail y el sector público. He trabajado en proyectos
+          que van desde modelos predictivos y sistemas de recomendación hasta automatización
+          de procesos con IA generativa y LLMs.
+        </p>
+        <p>
+          Me apasiona convertir datos en historias comprensibles y en herramientas concretas
+          que generen impacto medible: reduciendo tiempos de atención, optimizando recursos
+          y mejorando la experiencia de clientes y equipos de trabajo.
+        </p>
+      </div>
+      <div class="skills-col">
+        <div class="skill-card">
+          <h4>Data Science & ML</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Scikit-learn</span>
+            <span class="skill-tag">Time Series</span>
+            <span class="skill-tag">Computer Vision</span>
+            <span class="skill-tag">NLP</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <h4>IA Generativa & LLMs</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">Gemini</span>
+            <span class="skill-tag">Claude</span>
+            <span class="skill-tag">LangChain</span>
+            <span class="skill-tag">Prompt Engineering</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <h4>Analytics & Cloud</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">APIs REST</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">BigQuery</span>
+            <span class="skill-tag">Cloud</span>
+            <span class="skill-tag">Automatización</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <h4>Liderazgo</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">Equipos multidisciplinarios</span>
+            <span class="skill-tag">Metodologías ágiles</span>
+            <span class="skill-tag">Política pública</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ──────────────── PROJECTS ──────────────── -->
+<section id="projects">
+  <div class="section-inner">
+    <p class="section-tag">Proyectos</p>
+    <h2 class="section-title">Algoritmos & Soluciones<br>Desarrolladas</h2>
+
+    <div class="projects-grid">
+
+      <!-- 1 -->
+      <div class="project-card">
+        <div class="project-icon" style="background:#dbeafe">🖊️</div>
+        <h3>Comparación Automática de Firmas</h3>
+        <p>
+          En una institución financiera, la validación de firmas entre documentos de
+          contratación y cédulas de identidad se realizaba manualmente, tomando ~7 minutos
+          por caso. Desarrollé un sistema de similitud que redujo el tiempo a segundos,
+          impactando directamente la atención al ejecutivo.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag tag-blue">Computer Vision</span>
+          <span class="project-tag tag-green">Finanzas</span>
+          <span class="project-tag tag-gray">Automatización</span>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="project-card">
+        <div class="project-icon" style="background:#dcfce7">🎯</div>
+        <h3>Sistema de Recomendación de Beneficios</h3>
+        <p>
+          Modelo integral que unifica tres mecanismos de recomendación para asignar
+          el beneficio más adecuado a cada cliente dentro de su sesión privada en el
+          portal institucional. Genera un top 5 personalizado, haciendo cada
+          sesión única y maximizando el engagement.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag tag-purple">Recomendación</span>
+          <span class="project-tag tag-green">Engagement</span>
+          <span class="project-tag tag-blue">ML</span>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="project-card">
+        <div class="project-icon" style="background:#ffedd5">⚙️</div>
+        <h3>Automatización de Encuestas</h3>
+        <p>
+          Transformé un proceso 100% manual —múltiples encuestas realizadas diariamente
+          durante 18 meses— hacia una automatización completa mediante APIs y Claude.
+          El equipo de sociólogos adquirió habilidades de programación y recuperó
+          independencia en su trabajo diario.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag tag-orange">APIs REST</span>
+          <span class="project-tag tag-teal">Automatización</span>
+          <span class="project-tag tag-gray">Gestión del cambio</span>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="project-card">
+        <div class="project-icon" style="background:#ede9fe">💹</div>
+        <h3>Open Data · Finanzas Abiertas</h3>
+        <p>
+          Proyecto de finanzas abiertas donde, con consentimiento informado del cliente,
+          se accedía a sus datos financieros para generar ofertas en línea personalizadas.
+          El piloto fue exitoso, transformando el modelo de oferta mensual a una
+          propuesta en tiempo real.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag tag-purple">Fintech</span>
+          <span class="project-tag tag-blue">Open Data</span>
+          <span class="project-tag tag-green">Innovación</span>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="project-card">
+        <div class="project-icon" style="background:#fce7f3">🎙️</div>
+        <h3>Análisis Masivo de Audios</h3>
+        <p>
+          Para entender por qué clientes rechazaban productos, analicé masivamente
+          llamadas telefónicas con IA Generativa (Gemini SAPI). Los resultados permitieron
+          enfocar esfuerzos en el producto objetivo; las conversaciones vectorizadas
+          se convirtieron en variables predictivas para modelos probabilísticos.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag tag-pink">NLP</span>
+          <span class="project-tag tag-yellow">IA Generativa</span>
+          <span class="project-tag tag-blue">Gemini</span>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="project-card">
+        <div class="project-icon" style="background:#ccfbf1">📈</div>
+        <h3>Time Series Forecasting Masivo</h3>
+        <p>
+          Usando variables exógenas macroeconómicas, desarrollé un modelo de
+          forecasting masivo para predecir la afluencia diaria de personas a tiendas
+          de retail. El resultado permite anticiparse días antes y tomar decisiones
+          de contratación de personal externo para días de alta demanda.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag tag-teal">Series de Tiempo</span>
+          <span class="project-tag tag-blue">Forecasting</span>
+          <span class="project-tag tag-green">Retail</span>
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="project-card">
+        <div class="project-icon" style="background:#fef9c3">🏛️</div>
+        <h3>Estimación de Fondo Patrimonial</h3>
+        <p>
+          Para el sector público (2014–2017), desarrollé simulaciones financieras que
+          evalúan el estado de resultados de fondos patrimoniales bajo distintos supuestos
+          fundamentales. Este trabajo apoyó la conformación de importantes medidas
+          de política pública a nivel nacional.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag tag-yellow">Política Pública</span>
+          <span class="project-tag tag-orange">Simulaciones</span>
+          <span class="project-tag tag-gray">Sector Público</span>
+        </div>
+      </div>
+
+      <!-- 8 -->
+      <div class="project-card">
+        <div class="project-icon" style="background:#f3f4f6">🤖</div>
+        <h3>Automatización de Razonamiento Humano</h3>
+        <p>
+          Implementé Social Listening sobre YouScan para clasificar automáticamente
+          menciones en redes sociales mediante LLMs. Un robot reemplaza el equivalente
+          a 6 horas diarias de trabajo humano, clasificando posteos en tiempo real
+          según una taxonomía de negocio compleja con alta consistencia.
+        </p>
+        <div class="project-tags">
+          <span class="project-tag tag-blue">LLM</span>
+          <span class="project-tag tag-purple">Social Listening</span>
+          <span class="project-tag tag-pink">NLP</span>
+          <span class="project-tag tag-teal">Automatización</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ──────────────── FOOTER ──────────────── -->
+<footer id="contact">
+  <div class="footer-inner">
+    <h2>¿Hablamos?</h2>
+    <p>
+      Siempre abierto a nuevos desafíos, colaboraciones y proyectos
+      donde los datos puedan marcar la diferencia.
+    </p>
+    <div class="footer-links">
+      <a href="https://github.com/IvanRenatoC" target="_blank" rel="noopener" class="footer-link">
+        GitHub ↗
+      </a>
+      <a href="mailto:ivanrenatoc.analytics.lab@gmail.com" class="footer-link">
+        ✉ Email
+      </a>
+    </div>
+    <p class="footer-copy">© 2025 Iván Renato · Hecho con datos y buen gusto.</p>
+  </div>
+</footer>
+
+</body>
+</html>
