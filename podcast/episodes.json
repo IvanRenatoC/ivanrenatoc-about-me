@@ -1,0 +1,13 @@
+{
+  "_readme": "Para agregar un episodio futuro: (1) copia el .mp3 a /podcast, (2) añade un objeto al array 'episodes' siguiendo la misma estructura. No es necesario tocar HTML ni CSS.",
+  "episodes": [
+    {
+      "id": 1,
+      "title": "Logit, Random Forest y Gradient Boosting",
+      "topic": "Un recorrido práctico por tres pilares de la clasificación supervisada: la regresión logística como punto de partida interpretable, los Random Forests como ensamble de árboles que reduce la varianza, y el Gradient Boosting como técnica que aprende iterativamente de sus propios errores. ¿Cuándo conviene cada modelo y por qué la elección importa?",
+      "file": "podcast/Logit_Random_Forest_y_Gradient_Boosting.mp3",
+      "date": "2026-06-10",
+      "tags": ["clasificación", "machine learning", "ensambles"]
+    }
+  ]
+}

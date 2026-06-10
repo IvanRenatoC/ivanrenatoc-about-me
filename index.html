@@ -476,6 +476,87 @@
       margin-bottom: 1rem;
     }
 
+    /* ─── PODCAST ─── */
+    #podcast {
+      padding: 110px 6%;
+      background: var(--surface);
+    }
+    .podcast-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      margin-top: 3rem;
+    }
+    .podcast-item {
+      background: var(--bg);
+      border-radius: 18px;
+      padding: 1.8rem 2rem;
+      border: 1px solid var(--border);
+      transition: all 0.3s ease;
+    }
+    .podcast-item:hover {
+      box-shadow: 0 8px 30px rgba(15, 35, 66, 0.08);
+      border-color: var(--accent-light);
+    }
+    .podcast-item-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.2rem;
+      margin-bottom: 1.2rem;
+    }
+    .podcast-ep-num {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: 0.7rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      letter-spacing: 0.02em;
+    }
+    .podcast-meta { flex: 1; min-width: 0; }
+    .podcast-meta h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.35rem;
+      line-height: 1.35;
+    }
+    .podcast-meta p {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .podcast-date {
+      flex-shrink: 0;
+      font-size: 0.72rem;
+      color: var(--muted);
+      font-weight: 500;
+      background: white;
+      border: 1px solid var(--border);
+      padding: 0.18rem 0.6rem;
+      border-radius: 100px;
+    }
+    .podcast-player {
+      width: 100%;
+      height: 36px;
+      border-radius: 8px;
+    }
+    .podcast-player:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+    .podcast-message {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.88rem;
+      padding: 2.5rem 1rem;
+    }
+
     /* ─── RESPONSIVE ─── */
     @media (max-width: 900px) {
       .hero-inner { grid-template-columns: 1fr; text-align: center; gap: 3rem; }
@@ -489,6 +570,8 @@
       .trayectoria-grid { grid-template-columns: 1fr; gap: 3rem; }
       .nav-links { display: none; }
       .projects-grid { grid-template-columns: 1fr; }
+      .podcast-item-header { flex-wrap: wrap; gap: 0.9rem; }
+      .podcast-date { align-self: flex-start; }
     }
   </style>
 </head>
@@ -501,6 +584,7 @@
     <li><a href="#about">Sobre mí</a></li>
     <li><a href="#trayectoria">Trayectoria</a></li>
     <li><a href="#projects">Proyectos</a></li>
+    <li><a href="#podcast">Podcast</a></li>
     <li><a href="https://github.com/IvanRenatoC" target="_blank" rel="noopener">GitHub ↗</a></li>
   </ul>
 </nav>
@@ -907,6 +991,17 @@
   </div>
 </section>
 
+<!-- ──────────────── PODCAST ──────────────── -->
+<section id="podcast">
+  <div class="section-inner">
+    <p class="section-tag">Podcast</p>
+    <h2 class="section-title">Data en Audio</h2>
+    <div id="podcast-list" class="podcast-list" aria-label="Lista de episodios del podcast">
+      <p class="podcast-message">Cargando episodios…</p>
+    </div>
+  </div>
+</section>
+
 <!-- ──────────────── FOOTER ──────────────── -->
 <footer id="contact">
   <div class="footer-inner">
@@ -932,6 +1027,54 @@
     <p class="footer-copy">© 2025 Iván Renato Canales C. · Hecho con datos y buen gusto.</p>
   </div>
 </footer>
+
+
+<script>
+(function () {
+  var MONTHS = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+
+  function formatDate(dateStr) {
+    var parts = dateStr.split('-');
+    return parseInt(parts[2]) + ' ' + MONTHS[parseInt(parts[1]) - 1] + '. ' + parts[0];
+  }
+
+  function renderEpisodes(episodes) {
+    if (!episodes || episodes.length === 0) {
+      return '<p class="podcast-message">Próximamente los primeros episodios.</p>';
+    }
+    return episodes.map(function (ep) {
+      return '<article class="podcast-item" aria-label="Episodio ' + ep.id + ': ' + ep.title + '">'
+        + '<div class="podcast-item-header">'
+        + '<div class="podcast-ep-num" aria-hidden="true">Ep.&nbsp;' + ep.id + '</div>'
+        + '<div class="podcast-meta">'
+        + '<h3>' + ep.title + '</h3>'
+        + '<p>' + ep.topic + '</p>'
+        + '</div>'
+        + '<span class="podcast-date">' + formatDate(ep.date) + '</span>'
+        + '</div>'
+        + '<audio class="podcast-player" controls preload="none" aria-label="Reproductor: ' + ep.title + '">'
+        + '<source src="' + ep.file + '" type="audio/mpeg">'
+        + 'Tu navegador no soporta audio HTML5.'
+        + '</audio>'
+        + '</article>';
+    }).join('');
+  }
+
+  var container = document.getElementById('podcast-list');
+
+  fetch('podcast/episodes.json')
+    .then(function (res) {
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      return res.json();
+    })
+    .then(function (data) {
+      container.innerHTML = renderEpisodes(data.episodes);
+    })
+    .catch(function () {
+      container.innerHTML = '<p class="podcast-message">No se pudieron cargar los episodios. Inténtalo de nuevo más tarde.</p>';
+    });
+})();
+</script>
 
 </body>
 </html>
