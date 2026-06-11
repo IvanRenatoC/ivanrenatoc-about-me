@@ -8,6 +8,14 @@
       "file": "podcast/Logit_Random_Forest_y_Gradient_Boosting.mp3",
       "date": "2026-06-10",
       "tags": ["clasificación", "machine learning", "ensambles"]
+    },
+    {
+      "id": 2,
+      "title": "Modelado y pronóstico de series de tiempo",
+      "topic": "Cómo anticipar el futuro a partir del pasado. Un recorrido por el modelado y pronóstico de series de tiempo: la descomposición en tendencia y estacionalidad, los métodos clásicos como ARIMA y el suavizamiento exponencial, y cuándo conviene cada enfoque para producir pronósticos confiables.",
+      "file": "podcast/Modelado_y_pronostico_de_series_de_tiempo.mp3",
+      "date": "2026-06-11",
+      "tags": ["series de tiempo", "pronóstico", "ARIMA"]
     }
   ]
 }
