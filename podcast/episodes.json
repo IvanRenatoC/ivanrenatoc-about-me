@@ -6,6 +6,7 @@
       "title": "Logit, Random Forest y Gradient Boosting",
       "topic": "Un recorrido práctico por tres pilares de la clasificación supervisada: la regresión logística como punto de partida interpretable, los Random Forests como ensamble de árboles que reduce la varianza, y el Gradient Boosting como técnica que aprende iterativamente de sus propios errores. ¿Cuándo conviene cada modelo y por qué la elección importa?",
       "file": "podcast/Logit_Random_Forest_y_Gradient_Boosting.mp3",
+      "cover": "podcast/covers/ep01-clasificacion-binaria.png",
       "date": "2026-06-10",
       "tags": ["clasificación", "machine learning", "ensambles"]
     },
@@ -14,6 +15,7 @@
       "title": "Modelado y pronóstico de series de tiempo",
       "topic": "Cómo anticipar el futuro a partir del pasado. Un recorrido por el modelado y pronóstico de series de tiempo: la descomposición en tendencia y estacionalidad, los métodos clásicos como ARIMA y el suavizamiento exponencial, y cuándo conviene cada enfoque para producir pronósticos confiables.",
       "file": "podcast/Modelado_y_pronostico_de_series_de_tiempo.mp3",
+      "cover": "podcast/covers/ep02-series-de-tiempo.png",
       "date": "2026-06-11",
       "tags": ["series de tiempo", "pronóstico", "ARIMA"]
     }
