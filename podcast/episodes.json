@@ -18,6 +18,15 @@
       "cover": "podcast/covers/ep02-series-de-tiempo.png",
       "date": "2026-06-11",
       "tags": ["series de tiempo", "pronóstico", "ARIMA"]
+    },
+    {
+      "id": 3,
+      "title": "Segmentación moderna en un ambiente clásico",
+      "topic": "La segmentación agrupa datos buscando patrones naturales en clientes o productos. Métodos como K-Means, DBSCAN y GMM son claves, mientras que Deep Clustering lleva esto a Neural Network y Computer Vision para hallar estructuras complejas.",
+      "file": "podcast/Como_la_IA_segmenta_datos_sin_etiquetas.mp3",
+      "cover": "podcast/covers/ep03-segmentacion.png",
+      "date": "2026-06-12",
+      "tags": ["segmentación", "K-Means", "clustering", "computer vision"]
     }
   ]
 }
