@@ -27,6 +27,15 @@
       "cover": "podcast/covers/ep03-segmentacion.png",
       "date": "2026-06-12",
       "tags": ["segmentación", "K-Means", "clustering", "computer vision"]
+    },
+    {
+      "id": 4,
+      "title": "Matemática para la estrategia del fútbol",
+      "topic": "¿La estrategia de un partido obedece a un espacio plano?, o en verdad el delantero está mucho más cerca al límite de un espacio vectorial elíptico que un centrocampista... La geometría de la información estudia espacios curvos mediante diferentes puntos de vista.",
+      "file": "podcast/El_campo_de_futbol_no_es_plano.mp3",
+      "cover": "podcast/covers/ep04-futbol1.png",
+      "date": "2026-06-15",
+      "tags": ["soccer", "fútbol", "métricas", "data science", "matemática"]
     }
   ]
 }
