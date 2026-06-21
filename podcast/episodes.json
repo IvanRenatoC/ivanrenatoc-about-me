@@ -36,6 +36,15 @@
       "cover": "podcast/covers/ep04-futbol1.png",
       "date": "2026-06-15",
       "tags": ["soccer", "fútbol", "métricas", "data science", "matemática"]
+    },
+    {
+      "id": 5,
+      "title": "Fraude: mejores prácticas de predicción",
+      "topic": "Detectar el fraude ya no consiste solo en reaccionar a lo que pasó: ¿y si el riesgo pudiera anticiparse antes de que el daño ocurra? Un recorrido por cómo el machine learning —del Gradient Boosting al análisis de grafos— está transformando la prevención del fraude en banca y comercio, sumando lenguaje, imágenes y patrones de comportamiento para predecir, y no solo detectar.",
+      "file": "podcast/Atrapar_fraudes_financieros_en_milisegundos.mp3",
+      "cover": "podcast/covers/ep05-fraude.png",
+      "date": "2026-06-21",
+      "tags": ["fraude", "fraud detection", "machine learning", "gradient boosting", "grafos", "banca", "data science"]
     }
   ]
 }
